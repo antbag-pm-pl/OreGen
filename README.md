@@ -5,4 +5,4 @@
 </p>
 
 # Information
-With this plugin you can set up blocks to spawn in a classic cobblestone generator rather than plain cobblestone blocks! Each time a block spawns in a cobblestone generator, it has a chance to change to a desired block. These blocks and their probability can be changed in the plugin's *config.yml* file. You can black/whitelist certain worlds for OreGen to function in, or have it function in all worlds at once!
+With this plugin you can set up blocks to spawn in a classic cobblestone generator rather than plain cobblestone blocks! Each time a block spawns in a cobblestone generator, it has a chance to change to a desired block. These blocks and their probability can be changed in the plugin!
