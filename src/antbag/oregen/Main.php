@@ -9,8 +9,6 @@ use pocketmine\block\VanillaBlocks;
 class Main extends PluginBase {
 
   public function onEnable(): void {
-    $this->saveDefaultConfig();
-    $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
 
   public function BlockUpdate(BlockFormEvent $event) {
