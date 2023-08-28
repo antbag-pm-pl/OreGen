@@ -43,7 +43,5 @@ class Main extends PluginBase {
         // Cancel the event to prevent default block formation
         $event->cancel();
     }
+  }
 }
-
-
-  
