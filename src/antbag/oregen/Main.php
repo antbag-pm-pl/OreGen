@@ -5,10 +5,13 @@ namespace antbag\oregen;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\block\BlockFormEvent;
 use pocketmine\block\VanillaBlocks;
+use pocketmine\utils\Config;
 
 class Main extends PluginBase {
 
   public function onEnable(): void {
+    $this->saveDefaultConfig();
+    $config = $this->getConfig();
   }
 
   public function BlockUpdate(BlockFormEvent $event) {
@@ -16,23 +19,31 @@ class Main extends PluginBase {
     $world = $block->getPosition()->getWorld();
     $randomOre = mt_rand(1, 10);
     
-    if ($randomOre <= 3) {
-      $oreType = mt_rand(1, 3);
-      $oreBlock = null;
-      switch ($oreType) {
-        case 1:
-          $oreBlock = VanillaBlocks::COAL_ORE();
-        break;
-        case 2:
-          $oreBlock = VanillaBlocks::IRON_ORE();
-        break;
-        case 3:
-          $oreBlock = VanillaBlocks::GOLD_ORE();
-        break;
-      }
-      if ($oreBlock !== null) {
+    $config = $this->getConfig();
+    $oreGenerationChance = $config->get("ore-generation-chance");
+    
+    if ($randomOre <= $oreGenerationChance) {
+        $coalOreChance = $config->get("coal-ore-chance");
+        $ironOreChance = $config->get("iron-ore-chance");
+        $goldOreChance = $config->get("gold-ore-chance");
+        
+        $oreType = mt_rand(1, $coalOreChance + $ironOreChance + $goldOreChance);
+        
+        if ($oreType <= $coalOreChance) {
+            $oreBlock = VanillaBlocks::COAL_ORE();
+        } elseif ($oreType <= $coalOreChance + $ironOreChance) {
+            $oreBlock = VanillaBlocks::IRON_ORE();
+        } else {
+            $oreBlock = VanillaBlocks::GOLD_ORE();
+        }
+        
+        // Set the new ore block at the same position as the original block
         $world->setBlock($block->getPosition(), $oreBlock);
-      }
+        
+        // Cancel the event to prevent default block formation
+        $event->cancel();
     }
-  }
 }
+
+
+  
