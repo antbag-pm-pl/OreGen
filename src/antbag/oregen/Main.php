@@ -20,7 +20,7 @@ class Main extends PluginBase {
     $randomOre = mt_rand(1, 10);
     
     $config = $this->getConfig();
-    $oreGenerationChance = $config->get("ore-generation-chance");
+    $oreGenerationChance = $config->get("ore-generation-chance", 3);
     
     if ($randomOre <= $oreGenerationChance) {
         $coalOreChance = $config->get("coal-ore-chance");
