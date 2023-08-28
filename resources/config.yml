@@ -1,0 +1,6 @@
+ore-generation-chance: 3
+
+# The sum of these must add up to 100 like 50+30+20 = 100 if they wont be hundred the plugin may cause problems
+coal-ore-chance: 50
+iron-ore-chance: 30
+gold-ore-chance: 20
