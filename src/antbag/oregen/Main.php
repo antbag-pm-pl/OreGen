@@ -22,7 +22,7 @@ class Main extends PluginBase {
     $config = $this->getConfig();
     
     
-    if ($randomOre < 3) {
+    if ($randomOre = 3) {
         $coalOreChance = $config->get("coal-ore-chance");
         $ironOreChance = $config->get("iron-ore-chance");
         $goldOreChance = $config->get("gold-ore-chance");
