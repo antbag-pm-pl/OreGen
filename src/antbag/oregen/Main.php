@@ -17,12 +17,12 @@ class Main extends PluginBase {
   public function BlockUpdate(BlockFormEvent $event) {
     $block = $event->getBlock();
     $world = $block->getPosition()->getWorld();
-    $randomOre = mt_rand(1, 4);
+    $randomOre = mt_rand(1, 100);
     
     $config = $this->getConfig();
     
     
-    if ($randomOre = 3) {
+    if ($randomOre !<= 3) {
         $coalOreChance = $config->get("coal-ore-chance");
         $ironOreChance = $config->get("iron-ore-chance");
         $goldOreChance = $config->get("gold-ore-chance");
