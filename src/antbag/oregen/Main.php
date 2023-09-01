@@ -17,7 +17,7 @@ class Main extends PluginBase {
   public function BlockUpdate(BlockFormEvent $event) {
     $block = $event->getBlock();
     $world = $block->getPosition()->getWorld();
-    $randomOre = mt_rand(1, 10);
+    $randomOre = mt_rand(1, 4);
     
     $config = $this->getConfig();
     
