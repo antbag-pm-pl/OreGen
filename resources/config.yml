@@ -1,5 +1,11 @@
-# The sum of these must add up to 100 like 50+30+20 = 100 if they wont be hundred the plugin may cause problems.
-
-coal-ore-chance: 50
-iron-ore-chance: 30
-gold-ore-chance: 20
+# Configurable ore chances (percentages, they should add up to 140)
+ore-chances:
+  coal-ore: 35
+  iron-ore: 25
+  gold-ore: 15
+  diamond-ore: 5
+  emerald-ore: 5
+  lapis-lazuli-ore: 5
+  redstone-ore: 20
+  copper-ore: 25
+  quartz-ore: 5
