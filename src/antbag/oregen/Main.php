@@ -5,8 +5,9 @@ namespace antbag\oregen;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\block\BlockFormEvent;
 use pocketmine\block\VanillaBlocks;
+use pocketmine\event\Listener;
 
-class Main extends PluginBase {
+class Main extends PluginBase implements Listener {
 
   public function onEnable(): void {
   
